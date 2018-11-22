@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+ - sourve: script/newcode
+   destination: /var/www/html
+hooks:
+ BeforeInstall:
+    - location: script/install_dependecies.sh
+      timeout: 300
+      runas: root
+ AfterInstall:
+    - location: script/install_dependencies01.sh
+      timeout: 300
+runas: root
